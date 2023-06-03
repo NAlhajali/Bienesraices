@@ -1,0 +1,93 @@
+.derecha {
+    display: flex; // para darle direccion
+    flex-direction: column; // direccion en columnas
+    align-items: center; // se uso porque se redujo el tama;o y luego lo centre
+
+    @include tablet {
+        align-items: flex-end; // se incluyo mq pars table que aparezca a la derecha
+    }
+
+    .dark-mode-boton {
+        width: 3rem; // tamano del icono 
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        filter: invert(100%); // sirve para invertir el color del icono, lo hizo blanco
+
+        &:hover {
+            cursor: pointer; // para que aparezca la mano
+        }
+
+        @include tablet {
+            margin-top: 0;
+        }
+
+    }
+}
+.barra {
+    @include tablet {
+        img {
+            max-width: 100%;
+            width: 28rem;
+            height: auto;
+        }
+    }
+    display: flex; // se llama a display flex
+    flex-direction: column; // para sea en columnas
+     align-items: center; // se coloco para que se centrada deespues de la modificacion del icono
+    padding-top: 3rem; // pading arriba 
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+
+        align-items: flex-end; // se paso para el mq porque en telefono pequenos no se veia bien
+    }
+}
+.navegacion {
+    visibility: hidden; // va hacer que no se vea el contenido de la hmburguesa (menu hamburguesa)
+    opacity: 0; // opacidad y luego la agrego a la transicion  (menu hamburguesa)
+    height: 0;
+    transition: visibility .3s ease-in-out, opacity 0.5s linear, height 0.5s linear; // animacion (menu hamburguesa)
+    @include tablet {
+        display: flex;
+        align-items: center;
+        opacity: 1; // se coloco aca para mostrar menu en tatblet y desktop
+        visibility: visible; // igual aca
+    }
+
+    a {
+        color: $blanco;
+        text-decoration: none;
+        font-size: 2.2rem;
+        display: block; // se uso para hacerlo un block a la nav en dispositivos celulares
+        text-align: center;
+
+        @include tablet { // se uso en mdq para qe se vean a lo largo en dispo tabler o lp
+            margin-right: 2rem; //se uso para darle separacion a los enlanes de la nav
+            font-size: 1.8rem;
+        }
+
+        &:hover {
+            color: $verde;
+        }
+
+        &:last-of-type{ // se uso para darle separacion al ultimo enlc (contacto)
+            margin-right: 0;
+        }
+    }
+    
+}
+// menu de hamburguesa
+.mobile-menu {
+    @include tablet {
+        display: none;
+    }
+    img {
+        width: 5rem;
+    }
+}
+
+.mostrar {
+    visibility: visible; // va hacer que se vea 
+    opacity: 1;
+    height: auto;
+}

@@ -1,0 +1,48 @@
+@include tablet { // aplicando mq a ql contenedor
+    .contenedor-anuncios {
+        @include grid(3, 2rem);
+    }
+}
+.anuncio { // aplicandolo colo de fondo al anuncio
+    background-color: lighten($gris, 5);
+    border: 1px solid darken($gris, 10);
+    margin-bottom: 2rem;
+    
+    .contenido-anuncio {
+        padding: 2rem;
+        // text-align: center;
+    }
+    h3, p { // dandole margin 0 al h y p de ese contenido
+        margin: 0;
+    }
+    // .precio { // trabajando en el precio
+    //     color: $verde;
+    //     font-weight: bold;
+    //     font-size: 2.6rem;
+    // }
+}
+.precio { // trabajando en el precio
+    color: $verde;
+    font-weight: $bold;
+    font-size: 2.6rem;
+}
+.inconos-caracteristicas {
+    display: flex; // para que aparezan uno al lado del otro
+    list-style: none; // quitarle los puntos a el listado
+    padding: 0; // quitarle el pading que trae el listado
+    max-width: 40rem;
+    
+
+    li {
+        flex: 1;
+        display: flex;
+    }
+    img {
+        flex: 0 0 3rem;
+        margin-right: 1rem;
+        
+    }
+    p {
+        font-weight: black;
+    }
+}

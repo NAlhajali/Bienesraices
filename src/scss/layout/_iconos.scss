@@ -1,0 +1,16 @@
+
+@include tablet { // se puso dentro del mediaquery para pantallas mas 
+    .iconos-nosotros { // peque;as se vea de arriba abajo
+        @include grid(3, 2rem)
+    }
+}
+
+.icono {
+    text-align: center;
+    img {
+        height: 10rem; // tama;o del icono
+    }
+    h3 {
+        text-transform: uppercase; // mayusculas del texto
+    }
+}
